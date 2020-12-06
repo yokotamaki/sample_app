@@ -30,6 +30,12 @@ class TodolistsController < ApplicationController
     @list = List.find(params[:id])
   end
 
+def update
+    list = List.find(params[:id])
+    list.update(list_params)
+    redirect_to todolist_path(list.id)
+end
+
   #privateより下はコントローラ内の中でしか呼び出せない
   private
   #privateよりも下に記載されたlist_paramsはアクションとして認識されない

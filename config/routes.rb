@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   get 'todolists/:id' => 'todolists#show', as: 'todolist'
   #編集画面
   get 'todolists/:id/edit' => 'todolists#edit', as: 'edit_todolist'
+  #編集内容を保存
+  patch 'todolists/:id' => 'todolists#update', as: 'update_todolist'
 end
