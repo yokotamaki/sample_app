@@ -30,11 +30,20 @@ class TodolistsController < ApplicationController
     @list = List.find(params[:id])
   end
 
-def update
+  def update
+      list = List.find(params[:id])
+      list.update(list_params)
+      redirect_to todolist_path(list.id)
+  end
+
+  #リソースの削除
+  def destroy
+    #データを１件取得
     list = List.find(params[:id])
-    list.update(list_params)
-    redirect_to todolist_path(list.id)
-end
+    #削除
+    list.destroy
+    redirect_to todolists_path
+  end
 
   #privateより下はコントローラ内の中でしか呼び出せない
   private
