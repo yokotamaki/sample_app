@@ -1,4 +1,5 @@
 class CreateLists < ActiveRecord::Migration[5.2]
+  #テーブルの作成
   def change
     create_table :lists do |t|
       t.string :title

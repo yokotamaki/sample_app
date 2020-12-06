@@ -1,5 +1,7 @@
 <h1>投稿一覧</h1>
+<!--　@listsから取得した投稿データを全て表示する処理 -->
 <% @lists.each do |list|  %>
   <p>タイトル</p>
+  <!-- 一覧画面から詳細画面へリンクを設定する -->
   <span><%= link_to  list.title, todolist_path(list.id) %></span>
 <% end %>
